@@ -1,9 +1,9 @@
 class_name Test
 
-var _name : String = ""
-var _file_path : String = ""
-var _expected_result : Dictionary = {}
-var _expected_errors : Array = []
+var _name := ""
+var _file_path := ""
+var _expected_result = null
+var _expected_errors := []
 
 func set_name(name : String):
 	_name = name
@@ -23,9 +23,10 @@ func add_expected_error(expected_error : Dictionary):
 func check(config_file : JSONConfigFile) -> bool:
 	config_file.validate(_file_path)
 
-	if not Comparator.are_equal(_expected_result, config_file.get_result()):
-		print(config_file.get_result())
-		return false
+	if _expected_result != null:
+		if not Comparator.are_equal(_expected_result, config_file.get_result()):
+			print(config_file.get_result())
+			return false
 
 	if not Comparator.are_equal(_expected_errors, config_file.get_errors()):
 		print(config_file.get_errors())
