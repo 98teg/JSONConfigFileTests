@@ -10,7 +10,6 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Missing file")
 	test.set_file_path("mising_file.json")
-	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_FILE,
 		"code": ERR_FILE_NOT_FOUND,
@@ -21,7 +20,6 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("An empty file is not valid")
 	test.set_file_path("test/test_files/basics/empty_file.json")
-	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.EMPTY_FILE,
 	})
@@ -31,7 +29,6 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("JSON parse error")
 	test.set_file_path("test/test_files/basics/json_parse_error.json")
-	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.JSON_PARSING_ERROR,
 		"code": ERR_PARSE_ERROR,
@@ -44,7 +41,6 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("2 is not a valid type")
 	test.set_file_path("test/test_files/basics/2.json")
-	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.OBJECT,
