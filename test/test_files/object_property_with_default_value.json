@@ -1,0 +1,7 @@
+{
+    "object": {
+        "obligatory_property": "ready",
+        "optional_property": "ready",
+        "property_with_default_value": "ready"
+    }
+}
