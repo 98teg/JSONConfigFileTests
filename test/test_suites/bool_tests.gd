@@ -12,7 +12,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("123 is not a boolean")
-	test.set_file_path("test/test_files/bool_123.json")
+	test.set_file_path("test/test_files/bool/123.json")
 	test.set_expected_result({"bool": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -24,14 +24,14 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("'true' is a boolean")
-	test.set_file_path("test/test_files/bool_true.json")
+	test.set_file_path("test/test_files/bool/true.json")
 	test.set_expected_result({"bool": true})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("'false' is a boolean")
-	test.set_file_path("test/test_files/bool_false.json")
+	test.set_file_path("test/test_files/bool/false.json")
 	test.set_expected_result({"bool": false})
 
 	case.add_test(test)

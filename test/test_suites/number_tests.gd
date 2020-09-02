@@ -14,7 +14,7 @@ static func execute(tests_results):
 	
 	test = Test.new()
 	test.set_name("\"Test\" is not a number")
-	test.set_file_path("test/test_files/number_Test.json")
+	test.set_file_path("test/test_files/number/Test.json")
 	test.set_expected_result({"number": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -26,14 +26,14 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("0.5 is a number")
-	test.set_file_path("test/test_files/number_05.json")
+	test.set_file_path("test/test_files/number/0_5.json")
 	test.set_expected_result({"number": 0.5})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("-3 is outside of the range")
-	test.set_file_path("test/test_files/number_-3.json")
+	test.set_file_path("test/test_files/number/-3.json")
 	test.set_expected_result({"number": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.NUMBER_VALUE_LESS_THAN_MIN,
@@ -46,28 +46,28 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("-2 is inside of the range")
-	test.set_file_path("test/test_files/number_-2.json")
+	test.set_file_path("test/test_files/number/-2.json")
 	test.set_expected_result({"number": -2.0})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("1 is inside of the range")
-	test.set_file_path("test/test_files/number_1.json")
+	test.set_file_path("test/test_files/number/1.json")
 	test.set_expected_result({"number": 1.0})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("3 is inside of the range")
-	test.set_file_path("test/test_files/number_3.json")
+	test.set_file_path("test/test_files/number/3.json")
 	test.set_expected_result({"number": 3.0})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("4 is outside of the range")
-	test.set_file_path("test/test_files/number_4.json")
+	test.set_file_path("test/test_files/number/4.json")
 	test.set_expected_result({"number": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.NUMBER_VALUE_MORE_THAN_MAX,

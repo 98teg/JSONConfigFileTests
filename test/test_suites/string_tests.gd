@@ -15,7 +15,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("4 is not a string")
-	test.set_file_path("test/test_files/string_4.json")
+	test.set_file_path("test/test_files/string/4.json")
 	test.set_expected_result({"string": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -27,7 +27,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("\"A\" is shorter than expected")
-	test.set_file_path("test/test_files/string_A.json")
+	test.set_file_path("test/test_files/string/A.json")
 	test.set_expected_result({"string": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.STRING_SHORTER_THAN_MIN,
@@ -40,28 +40,28 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("\"AB\" is valid")
-	test.set_file_path("test/test_files/string_AB.json")
+	test.set_file_path("test/test_files/string/AB.json")
 	test.set_expected_result({"string": "AB"})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("\"ABC\" is valid")
-	test.set_file_path("test/test_files/string_ABC.json")
+	test.set_file_path("test/test_files/string/ABC.json")
 	test.set_expected_result({"string": "ABC"})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("\"ABCD\" is valid")
-	test.set_file_path("test/test_files/string_ABCD.json")
+	test.set_file_path("test/test_files/string/ABCD.json")
 	test.set_expected_result({"string": "ABCD"})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("\"ABCDE\" is longer than expected")
-	test.set_file_path("test/test_files/string_ABCDE.json")
+	test.set_file_path("test/test_files/string/ABCDE.json")
 	test.set_expected_result({"string": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.STRING_LONGER_THAN_MAX,
@@ -74,7 +74,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("\"AB1\" contains numbers")
-	test.set_file_path("test/test_files/string_AB1.json")
+	test.set_file_path("test/test_files/string/AB1.json")
 	test.set_expected_result({"string": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.STRING_DO_NOT_MATCH_PATTERN,

@@ -20,7 +20,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An empty file is not valid")
-	test.set_file_path("test/test_files/empty_file.json")
+	test.set_file_path("test/test_files/basics/empty_file.json")
 	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.EMPTY_FILE,
@@ -30,7 +30,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("JSON parse error")
-	test.set_file_path("test/test_files/json_parse_error.json")
+	test.set_file_path("test/test_files/basics/json_parse_error.json")
 	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.JSON_PARSING_ERROR,
@@ -43,7 +43,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("2 is not a valid type")
-	test.set_file_path("test/test_files/2.json")
+	test.set_file_path("test/test_files/basics/2.json")
 	test.set_expected_result({})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -54,7 +54,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An empty dictionary is valid")
-	test.set_file_path("test/test_files/empty_dictionary.json")
+	test.set_file_path("test/test_files/basics/empty_dictionary.json")
 	test.set_expected_result({})
 
 	case.add_test(test)

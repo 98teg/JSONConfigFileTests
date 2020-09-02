@@ -18,7 +18,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("123 is not an array")
-	test.set_file_path("test/test_files/array_123.json")
+	test.set_file_path("test/test_files/array/123.json")
 	test.set_expected_result({"array": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -30,7 +30,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("[A] is smaller than expected")
-	test.set_file_path("test/test_files/array_A.json")
+	test.set_file_path("test/test_files/array/A.json")
 	test.set_expected_result({"array": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.ARRAY_SMALLER_THAN_MIN,
@@ -43,14 +43,14 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("[A, B] is valid")
-	test.set_file_path("test/test_files/array_A_B.json")
+	test.set_file_path("test/test_files/array/A_B.json")
 	test.set_expected_result({"array": ["A", "B"]})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("[A, B, 1] contains a integer and is not valid")
-	test.set_file_path("test/test_files/array_A_B_1.json")
+	test.set_file_path("test/test_files/array/A_B_1.json")
 	test.set_expected_result({"array": ["A", "B", null]})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -62,7 +62,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("[A, A, C, C] contains repeated elements and is not valid")
-	test.set_file_path("test/test_files/array_A_A_C_C.json")
+	test.set_file_path("test/test_files/array/A_A_C_C.json")
 	test.set_expected_result({"array": ["A", "A", "C", "C"]})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.ARRAY_TWO_ELEMENTS_ARE_EQUAL,
@@ -81,7 +81,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("[A, B, C, D, E] is bigger than expected")
-	test.set_file_path("test/test_files/array_A_B_C_D_E.json")
+	test.set_file_path("test/test_files/array/A_B_C_D_E.json")
 	test.set_expected_result({"array": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.ARRAY_BIGGER_THAN_MAX,

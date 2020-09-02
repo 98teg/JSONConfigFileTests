@@ -15,7 +15,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("123 is not an object")
-	test.set_file_path("test/test_files/object_123.json")
+	test.set_file_path("test/test_files/object/123.json")
 	test.set_expected_result({"object": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
@@ -27,7 +27,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An empty object does not contain the obligatory property")
-	test.set_file_path("test/test_files/object_empty.json")
+	test.set_file_path("test/test_files/object/empty.json")
 	test.set_expected_result({"object": {
 			"obligatory_property": null,
 			"property_with_default_value": "default value",
@@ -43,7 +43,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An object with the obligatory property is valid")
-	test.set_file_path("test/test_files/object_obligatory_property.json")
+	test.set_file_path("test/test_files/object/obligatory_property.json")
 	test.set_expected_result({"object": {
 			"obligatory_property": "ready",
 			"property_with_default_value": "default value",
@@ -54,7 +54,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An object with the optional property is valid")
-	test.set_file_path("test/test_files/object_optional_property.json")
+	test.set_file_path("test/test_files/object/optional_property.json")
 	test.set_expected_result({"object": {
 			"obligatory_property": "ready",
 			"optional_property": "ready",
@@ -66,7 +66,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An object with the property with default value is valid")
-	test.set_file_path("test/test_files/object_property_with_default_value.json")
+	test.set_file_path("test/test_files/object/property_with_default_value.json")
 	test.set_expected_result({"object": {
 			"obligatory_property": "ready",
 			"optional_property": "ready",
@@ -78,7 +78,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("An object with an extra property is not valid")
-	test.set_file_path("test/test_files/object_extra_property.json")
+	test.set_file_path("test/test_files/object/extra_property.json")
 	test.set_expected_result({"object": {
 			"obligatory_property": "ready",
 			"optional_property": "ready",
@@ -116,7 +116,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("At least one of the exclusive required properties is needed")
-	test.set_file_path("test/test_files/object_empty.json")
+	test.set_file_path("test/test_files/object/empty.json")
 	test.set_expected_result({"object": {}})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.OBJECT_ONE_IS_REQUIRED,
@@ -128,14 +128,14 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("One of the exclusive required properties has been specified")
-	test.set_file_path("test/test_files/object_one_req_exclusive_property.json")
+	test.set_file_path("test/test_files/object/one_req_exclusive_property.json")
 	test.set_expected_result({"object": {"exclusive_req_1": "done"}})
 
 	case.add_test(test)
 
 	test = Test.new()
 	test.set_name("An exclusive required property and an optional one are specified")
-	test.set_file_path("test/test_files/object_one_req_opt_exclusive_property.json")
+	test.set_file_path("test/test_files/object/one_req_opt_exclusive_property.json")
 	test.set_expected_result({
 		"object": {
 			"exclusive_req_1": "done",
@@ -147,7 +147,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("Both exclusive required properties are specified")
-	test.set_file_path("test/test_files/object_two_req_exclusive_property.json")
+	test.set_file_path("test/test_files/object/two_req_exclusive_property.json")
 	test.set_expected_result({
 		"object": {
 			"exclusive_req_1": "done",
@@ -164,7 +164,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("Main property specified, but not the dependent: Error")
-	test.set_file_path("test/test_files/object_main_prop.json")
+	test.set_file_path("test/test_files/object/main_prop.json")
 	test.set_expected_result({
 		"object": {
 			"exclusive_req_1": "done",
@@ -182,7 +182,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("Dependent property specified, but not the main: Valid")
-	test.set_file_path("test/test_files/object_dependent_prop.json")
+	test.set_file_path("test/test_files/object/dependent_prop.json")
 	test.set_expected_result({
 		"object": {
 			"exclusive_req_1": "done",
@@ -194,7 +194,7 @@ static func execute(tests_results):
 
 	test = Test.new()
 	test.set_name("Both the main and the dependent property are specified")
-	test.set_file_path("test/test_files/object_main_dependent_prop.json")
+	test.set_file_path("test/test_files/object/main_dependent_prop.json")
 	test.set_expected_result({
 		"object": {
 			"exclusive_req_1": "done",
