@@ -10,6 +10,7 @@ func _ready():
 	preload("res://test/test_suites/bool_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/number_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/integer_tests.gd").execute(tests_results)
+	preload("res://test/test_suites/percentage_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/string_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/array_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/object_tests.gd").execute(tests_results)
