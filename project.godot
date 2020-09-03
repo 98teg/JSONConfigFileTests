@@ -45,6 +45,11 @@ _global_script_classes=[ {
 "path": "res://src/json_config_file/json_properties/json_property_color.gd"
 }, {
 "base": "JSONProperty",
+"class": "JSONPropertyEnum",
+"language": "GDScript",
+"path": "res://src/json_config_file/json_properties/json_property_enum.gd"
+}, {
+"base": "JSONProperty",
 "class": "JSONPropertyFile",
 "language": "GDScript",
 "path": "res://src/json_config_file/json_properties/json_property_file.gd"
@@ -97,6 +102,7 @@ _global_script_class_icons={
 "JSONPropertyArray": "",
 "JSONPropertyBool": "",
 "JSONPropertyColor": "",
+"JSONPropertyEnum": "",
 "JSONPropertyFile": "",
 "JSONPropertyImage": "",
 "JSONPropertyInteger": "",
