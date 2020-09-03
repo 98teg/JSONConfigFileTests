@@ -60,6 +60,11 @@ _global_script_classes=[ {
 "path": "res://src/json_config_file/json_properties/json_property_integer.gd"
 }, {
 "base": "JSONProperty",
+"class": "JSONPropertyJSONConfigFile",
+"language": "GDScript",
+"path": "res://src/json_config_file/json_properties/json_property_json_config_file.gd"
+}, {
+"base": "JSONProperty",
 "class": "JSONPropertyNumber",
 "language": "GDScript",
 "path": "res://src/json_config_file/json_properties/json_property_number.gd"
@@ -95,6 +100,7 @@ _global_script_class_icons={
 "JSONPropertyFile": "",
 "JSONPropertyImage": "",
 "JSONPropertyInteger": "",
+"JSONPropertyJSONConfigFile": "",
 "JSONPropertyNumber": "",
 "JSONPropertyObject": "",
 "JSONPropertyPercentage": "",

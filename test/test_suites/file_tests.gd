@@ -36,6 +36,7 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Absolute path to a missing file")
 	test.set_file_path("test/test_files/file/abosulte_path_to_a_missing_file.json")
+	test.set_expected_result({"file": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_FILE,
 		"code": ERR_FILE_NOT_FOUND,
@@ -47,6 +48,7 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Relative path to a missing file")
 	test.set_file_path("test/test_files/file/relative_path_to_a_missing_file.json")
+	test.set_expected_result({"file": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_FILE,
 		"code": ERR_FILE_NOT_FOUND,

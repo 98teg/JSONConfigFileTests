@@ -36,6 +36,7 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Absolute path to a file")
 	test.set_file_path("test/test_files/image/abosulte_path_to_a_file.json")
+	test.set_expected_result({"image": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_UNRECOGNIZED,
@@ -47,6 +48,7 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Relative path to a file")
 	test.set_file_path("test/test_files/image/relative_path_to_a_file.json")
+	test.set_expected_result({"image": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_UNRECOGNIZED,
@@ -58,6 +60,7 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Absolute path to a missing image")
 	test.set_file_path("test/test_files/image/abosulte_path_to_a_missing_image.json")
+	test.set_expected_result({"image": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_NOT_FOUND,
@@ -69,6 +72,7 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Relative path to a missing image")
 	test.set_file_path("test/test_files/image/relative_path_to_a_missing_image.json")
+	test.set_expected_result({"image": null})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_NOT_FOUND,
