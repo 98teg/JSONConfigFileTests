@@ -93,3 +93,53 @@ static func execute(tests_results):
 	case.add_test(test)
 
 	case.check_tests(tests_results)
+
+	element_property = JSONPropertyObject.new()
+	element_property.add_property("id", JSONPropertyInteger.new(), true)
+	element_property.add_property("name", JSONPropertyString.new(), true)
+
+	property = JSONPropertyArray.new()
+	property.set_element_property(element_property)
+	property.set_uniqueness(true, "id")
+
+	configuration = JSONConfigFile.new()
+	configuration.add_property("array", property)
+
+	case = Case.new()
+	case.set_name("Array with objects as elements that must have diferent IDs")
+	case.set_configuration(configuration)
+
+	test = Test.new()
+	test.set_name("Two elements has the same ID")
+	test.set_file_path("test/test_files/array/same_ids.json")
+	test.set_expected_result({
+		"array": [
+			{"id": 1, "name": "first"},
+			{"id": 2, "name": "second"},
+			{"id": 2, "name": "third"},
+		]
+	})
+	test.add_expected_error({
+		"error": JSONProperty.Errors.ARRAY_TWO_ELEMENTS_ARE_EQUAL,
+		"element_1": 1,
+		"element_2": 2,
+		"key": "id",
+		"context": "array",
+	})
+
+	case.add_test(test)
+
+	test = Test.new()
+	test.set_name("Every element has different IDs")
+	test.set_file_path("test/test_files/array/different_ids.json")
+	test.set_expected_result({
+		"array": [
+			{"id": 1, "name": "first"},
+			{"id": 2, "name": "second"},
+			{"id": 3, "name": "third"},
+		]
+	})
+
+	case.add_test(test)
+
+	case.check_tests(tests_results)
