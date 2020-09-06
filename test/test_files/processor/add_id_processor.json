@@ -1,0 +1,13 @@
+{
+    "objects": [
+        {
+            "name": "table"
+        },
+        {
+            "name": "lamp"
+        },
+        {
+            "name": "chair"
+        }
+    ]
+}

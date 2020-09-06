@@ -19,3 +19,4 @@ func _ready():
 	preload("res://test/test_suites/file_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/json_config_file_tests.gd").execute(tests_results)
 	preload("res://test/test_suites/image_tests.gd").execute(tests_results)
+	preload("res://test/test_suites/processor_tests.gd").execute(tests_results)
