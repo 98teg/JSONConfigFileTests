@@ -1,11 +1,12 @@
 static func execute(tests_results):
 	var property = JSONPropertyImage.new()
+	property.set_size(64, 64, false)
 
 	var configuration = JSONConfigFile.new()
 	configuration.add_property("image", property)
 
 	var case = Case.new()
-	case.set_name("Image")
+	case.set_name("Image with a expected size (64x64)")
 	case.set_configuration(configuration)
 
 	var test
@@ -30,6 +31,30 @@ static func execute(tests_results):
 	test = Test.new()
 	test.set_name("Relative path to an image")
 	test.set_file_path("test/test_files/image/relative_path_to_an_image.json")
+
+	case.add_test(test)
+
+	test = Test.new()
+	test.set_name("Absolute path to an image with wrong size")
+	test.set_file_path("test/test_files/image/abosulte_path_to_a_wrong_size_image.json")
+	test.add_expected_error({
+		"error": JSONProperty.Errors.IMAGE_WRONG_SIZE,
+		"expected_size": [64.0, 64.0],
+		"size": [32.0, 32.0],
+		"context": "image",
+	})
+
+	case.add_test(test)
+
+	test = Test.new()
+	test.set_name("Relative path to an image with wrong size")
+	test.set_file_path("test/test_files/image/relative_path_to_a_wrong_size_image.json")
+	test.add_expected_error({
+		"error": JSONProperty.Errors.IMAGE_WRONG_SIZE,
+		"expected_size": [64.0, 64.0],
+		"size": [32.0, 32.0],
+		"context": "image",
+	})
 
 	case.add_test(test)
 
