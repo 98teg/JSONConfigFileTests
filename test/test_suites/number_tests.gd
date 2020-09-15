@@ -11,7 +11,7 @@ static func execute(tests_results):
 	case.set_configuration(configuration)
 
 	var test
-	
+
 	test = Test.new()
 	test.set_name("\"Test\" is not a number")
 	test.set_file_path("test/test_files/number/Test.json")
@@ -20,6 +20,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.NUMBER,
 		"context": "number",
+		"as_text": "Wrong type: expected 'number', at 'number'.",
 	})
 
 	case.add_test(test)
@@ -40,6 +41,7 @@ static func execute(tests_results):
 		"min": -2.0,
 		"value": -3.0,
 		"context": "number",
+		"as_text": "-3.000 is less than the minimum allowed (-2.000), at 'number'.",
 	})
 
 	case.add_test(test)
@@ -74,6 +76,7 @@ static func execute(tests_results):
 		"max": 3.0,
 		"value": 4.0,
 		"context": "number",
+		"as_text": "4.000 is more than the maximum allowed (3.000), at 'number'.",
 	})
 
 	case.add_test(test)

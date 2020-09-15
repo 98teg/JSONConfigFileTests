@@ -18,6 +18,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.PERCENTAGE,
 		"context": "percentage",
+		"as_text": "Wrong type: expected 'percentage', at 'percentage'.",
 	})
 
 	case.add_test(test)
@@ -30,6 +31,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.PERCENTAGE_LESS_THAN_ZERO,
 		"value": -0.1,
 		"context": "percentage",
+		"as_text": "-0.100 is less than 0, at 'percentage'.",
 	})
 
 	case.add_test(test)
@@ -63,6 +65,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.PERCENTAGE_MORE_THAN_ONE,
 		"value": 1.1,
 		"context": "percentage",
+		"as_text": "1.100 is more than 1, at 'percentage'.",
 	})
 
 	case.add_test(test)

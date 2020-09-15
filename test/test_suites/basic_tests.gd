@@ -13,6 +13,7 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_FILE,
 		"code": ERR_FILE_NOT_FOUND,
+		"as_text": "Could not open the file.",
 	})
 
 	case.add_test(test)
@@ -22,6 +23,7 @@ static func execute(tests_results):
 	test.set_file_path("test/test_files/basics/empty_file.json")
 	test.add_expected_error({
 		"error": JSONProperty.Errors.EMPTY_FILE,
+		"as_text": "The configuration file can not be empty.",
 	})
 
 	case.add_test(test)
@@ -34,6 +36,7 @@ static func execute(tests_results):
 		"code": ERR_PARSE_ERROR,
 		"string": "Expected value, got '}'.",
 		"line": 3,
+		"as_text": "JSON parsing error at line 3: \"Expected value, got '}'.\".",
 	})
 
 	case.add_test(test)
@@ -44,6 +47,7 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.OBJECT,
+		"as_text": "Wrong type: expected 'object'.",
 	})
 
 	case.add_test(test)

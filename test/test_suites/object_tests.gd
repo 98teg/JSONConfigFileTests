@@ -20,7 +20,8 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.OBJECT,
-		"context": "object"
+		"context": "object",
+		"as_text" : "Wrong type: expected 'object', at 'object'.",
 	})
 
 	case.add_test(test)
@@ -37,6 +38,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_MISSING_PROPERTY,
 		"property": "obligatory_property",
 		"context": "object",
+		"as_text" : "The property 'obligatory_property' has not been specified, at 'object'.",
 	})
 
 	case.add_test(test)
@@ -89,6 +91,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_NON_VALID_PROPERTY,
 		"property": "extra_property",
 		"context": "object",
+		"as_text" : "The property 'extra_property' is not a valid one, at 'object'.",
 	})
 
 	case.add_test(test)
@@ -122,6 +125,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_ONE_IS_REQUIRED,
 		"properties": ["exclusive_req_1", "exclusive_req_2"],
 		"context": "object",
+		"as_text": "One of this properties needs to be specified: exclusive_req_1, exclusive_req_2, at 'object'."
 	})
 
 	case.add_test(test)
@@ -157,7 +161,8 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.OBJECT_EXCLUSIVITY_ERROR,
 		"properties": ["exclusive_req_1", "exclusive_req_2"],
-		"context": "object"
+		"context": "object",
+		"as_text": "This properties can not be present at the same time: exclusive_req_1, exclusive_req_2, at 'object'.",
 	})
 
 	case.add_test(test)
@@ -176,6 +181,7 @@ static func execute(tests_results):
 		"main_property": "main_prop",
 		"dependent_property": "dependent_prop",
 		"context": "object",
+		"as_text": "'main_prop' property has been specified, but 'dependent_prop' is missing, at 'object'.",
 	})
 
 	case.add_test(test)

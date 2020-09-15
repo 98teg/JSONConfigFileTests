@@ -18,6 +18,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.BOOL,
 		"context": "bool",
+		"as_text": "Wrong type: expected 'boolean', at 'bool'.",
 	})
 
 	case.add_test(test)

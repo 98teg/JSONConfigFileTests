@@ -18,6 +18,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.COLOR,
 		"context": "color",
+		"as_text": "Wrong type: expected 'color', at 'color'.",
 	})
 
 	case.add_test(test)
@@ -30,6 +31,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COLOR_WRONG_SIZE,
 		"size": 2,
 		"context": "color",
+		"as_text": "The color is 2 element(s) long, when it should be 3 to 4, at 'color'.",
 	})
 
 	case.add_test(test)
@@ -48,17 +50,7 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.COLOR_WRONG_TYPE,
 		"context": "color/[0]",
-	})
-
-	case.add_test(test)
-
-	test = Test.new()
-	test.set_name("[0.5, 34, 56] is not a valid color")
-	test.set_file_path("test/test_files/color/05_34_56.json")
-	test.set_expected_result({"color": Color.black})
-	test.add_expected_error({
-		"error": JSONProperty.Errors.COLOR_WRONG_TYPE,
-		"context": "color/[0]",
+		"as_text": "Wrong type: expected 'integer' in the range [0, 255], at 'color/[0]'.",
 	})
 
 	case.add_test(test)
@@ -71,6 +63,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COLOR_OUT_OF_RANGE,
 		"value": -1,
 		"context": "color/[0]",
+		"as_text": "Element out of the range [0, 255], at 'color/[0]'.",
 	})
 
 	case.add_test(test)
@@ -83,6 +76,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COLOR_OUT_OF_RANGE,
 		"value": 256,
 		"context": "color/[0]",
+		"as_text": "Element out of the range [0, 255], at 'color/[0]'.",
 	})
 
 	case.add_test(test)
@@ -102,6 +96,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COLOR_WRONG_SIZE,
 		"size": 5,
 		"context": "color",
+		"as_text": "The color is 5 element(s) long, when it should be 3 to 4, at 'color'.",
 	})
 
 	case.add_test(test)

@@ -17,6 +17,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.FILE,
 		"context": "file",
+		"as_text": "Wrong type: expected 'file path', at 'file'.",
 	})
 
 	case.add_test(test)
@@ -41,6 +42,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_FILE,
 		"code": ERR_FILE_NOT_FOUND,
 		"context": "file",
+		"as_text": "Could not open the file, at 'file'.",
 	})
 
 	case.add_test(test)
@@ -53,6 +55,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_FILE,
 		"code": ERR_FILE_NOT_FOUND,
 		"context": "file",
+		"as_text": "Could not open the file, at 'file'.",
 	})
 
 	case.add_test(test)

@@ -43,6 +43,7 @@ static func execute(tests_results):
 		"max": 3,
 		"value": 4,
 		"context": "a_value",
+		"as_text": "4 is more than the maximum allowed (3), at 'a_value'.",
 	})
 
 	case.add_test(test)
