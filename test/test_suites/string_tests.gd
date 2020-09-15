@@ -20,7 +20,8 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.STRING,
-		"context": "string"
+		"context": "string",
+		"as_text": "Wrong type: expected 'string', at 'string'.",
 	})
 
 	case.add_test(test)
@@ -34,6 +35,7 @@ static func execute(tests_results):
 		"min": 2,
 		"length": 1,
 		"context": "string",
+		"as_text": "The string length (1) is shorter than the minimum length allowed (2), at 'string'.",
 	})
 
 	case.add_test(test)
@@ -68,6 +70,7 @@ static func execute(tests_results):
 		"max": 4,
 		"length": 5,
 		"context": "string",
+		"as_text": "The string length (5) is longer than the maximum length allowed (4), at 'string'.",
 	})
 
 	case.add_test(test)
@@ -81,6 +84,7 @@ static func execute(tests_results):
 		"pattern": "^[a-zA-Z]+$",
 		"value": "AB1",
 		"context": "string",
+		"as_text": "'AB1' does not match the specified pattern (^[a-zA-Z]+$), at 'string'.",
 	})
 
 	case.add_test(test)

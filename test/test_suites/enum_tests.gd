@@ -19,6 +19,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.ENUM,
 		"context": "enum",
+		"as_text": "Wrong type: expected 'string', at 'enum'.",
 	})
 
 	case.add_test(test)
@@ -52,6 +53,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.ENUM_NOT_VALID,
 		"value": "FOURTH",
 		"context": "enum",
+		"as_text": "'FOURTH' is not in the list of valid values, at 'enum'.",
 	})
 
 	case.add_test(test)

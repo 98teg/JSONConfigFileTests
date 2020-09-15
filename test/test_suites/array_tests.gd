@@ -24,6 +24,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.ARRAY,
 		"context": "array",
+		"as_text": "Wrong type: expected 'array', at 'array'.",
 	})
 
 	case.add_test(test)
@@ -37,6 +38,7 @@ static func execute(tests_results):
 		"min": 2,
 		"size": 1,
 		"context": "array",
+		"as_text": "The array size (1) is smaller than the minimum allowed (2), at 'array'.",
 	})
 
 	case.add_test(test)
@@ -56,6 +58,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.STRING,
 		"context": "array/[2]",
+		"as_text": "Wrong type: expected 'string', at 'array/[2]'.",
 	})
 
 	case.add_test(test)
@@ -69,12 +72,14 @@ static func execute(tests_results):
 		"element_1": 0,
 		"element_2": 1,
 		"context": "array",
+		"as_text": "The array contains two elements that are equal: [0] and [1], at 'array'.",
 	})
 	test.add_expected_error({
 		"error": JSONProperty.Errors.ARRAY_TWO_ELEMENTS_ARE_EQUAL,
 		"element_1": 2,
 		"element_2": 3,
 		"context": "array",
+		"as_text": "The array contains two elements that are equal: [2] and [3], at 'array'.",
 	})
 
 	case.add_test(test)
@@ -88,6 +93,7 @@ static func execute(tests_results):
 		"max": 4,
 		"size": 5,
 		"context": "array",
+		"as_text": "The array size (5) is bigger than the maximum allowed (4), at 'array'.",
 	})
 
 	case.add_test(test)
@@ -125,6 +131,7 @@ static func execute(tests_results):
 		"element_2": 2,
 		"key": "id",
 		"context": "array",
+		"as_text": "The array contains two elements that are equal: [1] and [2], at 'array'.",
 	})
 
 	case.add_test(test)

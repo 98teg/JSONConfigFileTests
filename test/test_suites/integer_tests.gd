@@ -20,6 +20,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.INTEGER,
 		"context": "integer",
+		"as_text": "Wrong type: expected 'integer', at 'integer'.",
 	})
 
 	case.add_test(test)
@@ -32,6 +33,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.INTEGER,
 		"context": "integer",
+		"as_text": "Wrong type: expected 'integer', at 'integer'.",
 	})
 
 	case.add_test(test)
@@ -45,6 +47,7 @@ static func execute(tests_results):
 		"min": -2,
 		"value": -3,
 		"context": "integer",
+		"as_text": "-3 is less than the minimum allowed (-2), at 'integer'.",
 	})
 
 	case.add_test(test)
@@ -79,6 +82,7 @@ static func execute(tests_results):
 		"max": 3,
 		"value": 4,
 		"context": "integer",
+		"as_text": "4 is more than the maximum allowed (3), at 'integer'.",
 	})
 
 	case.add_test(test)

@@ -18,6 +18,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.IMAGE,
 		"context": "image",
+		"as_text": "Wrong type: expected 'image path', at 'image'.",
 	})
 
 	case.add_test(test)
@@ -42,6 +43,7 @@ static func execute(tests_results):
 		"expected_size": [64.0, 64.0],
 		"size": [32.0, 32.0],
 		"context": "image",
+		"as_text": "The image is not the correct size (64, 64), at 'image'.",
 	})
 
 	case.add_test(test)
@@ -54,6 +56,7 @@ static func execute(tests_results):
 		"expected_size": [64.0, 64.0],
 		"size": [32.0, 32.0],
 		"context": "image",
+		"as_text": "The image is not the correct size (64, 64), at 'image'.",
 	})
 
 	case.add_test(test)
@@ -66,6 +69,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_UNRECOGNIZED,
 		"context": "image",
+		"as_text": "Could not open the image, at 'image'.",
 	})
 
 	case.add_test(test)
@@ -78,6 +82,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_UNRECOGNIZED,
 		"context": "image",
+		"as_text": "Could not open the image, at 'image'.",
 	})
 
 	case.add_test(test)
@@ -90,6 +95,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_NOT_FOUND,
 		"context": "image",
+		"as_text": "Could not open the image, at 'image'.",
 	})
 
 	case.add_test(test)
@@ -102,6 +108,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COULD_NOT_OPEN_IMAGE,
 		"code": ERR_FILE_NOT_FOUND,
 		"context": "image",
+		"as_text": "Could not open the image, at 'image'.",
 	})
 
 	case.add_test(test)
