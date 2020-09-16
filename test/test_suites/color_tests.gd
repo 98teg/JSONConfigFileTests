@@ -51,6 +51,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COLOR_WRONG_TYPE,
 		"context": "color/[0]",
 		"as_text": "Wrong type: expected 'integer' in the range [0, 255], at 'color/[0]'.",
+<<<<<<< HEAD
 	})
 
 	case.add_test(test)
@@ -63,6 +64,8 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.COLOR_WRONG_TYPE,
 		"context": "color/[0]",
 		"as_text": "Wrong type: expected 'integer' in the range [0, 255], at 'color/[0]'.",
+=======
+>>>>>>> 7d4cb32062b67a564854228b5b71d57debc0baa0
 	})
 
 	case.add_test(test)
