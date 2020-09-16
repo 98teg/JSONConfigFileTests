@@ -131,7 +131,7 @@ static func execute(tests_results):
 		"element_2": 2,
 		"key": "id",
 		"context": "array",
-		"as_text": "The array contains two elements that are equal: [1] and [2], at 'array'.",
+		"as_text": "The array contains two objects with the same 'id': [1] and [2], at 'array'.",
 	})
 
 	case.add_test(test)
