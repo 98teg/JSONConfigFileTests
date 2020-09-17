@@ -22,7 +22,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.JSON_CONFIG_FILE,
 		"context": "json_config_file",
-		"as_text": "Wrong type: expected 'JSON config file path', at 'json_config_file'.",
+		"as_text": "Wrong type: expected 'JSON configuration file path', at 'json_config_file'.",
 	})
 
 	case.add_test(test)
