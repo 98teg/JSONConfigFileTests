@@ -1,7 +1,7 @@
 extends JSONConfigProcessor
 
 
-func _process(maximum : int):
+func _postprocess(maximum : int):
 	set_variable("max", maximum)
 
 	return maximum

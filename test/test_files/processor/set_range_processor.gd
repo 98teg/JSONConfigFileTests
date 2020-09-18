@@ -1,7 +1,7 @@
 extends JSONConfigProcessor
 
 
-func _process(_value):
+func _preprocess():
 	if has_variable("min"):
 		get_property().set_min_value(get_variable("min"))
 	if has_variable("max"):

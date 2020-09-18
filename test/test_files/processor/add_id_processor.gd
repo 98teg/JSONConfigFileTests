@@ -1,7 +1,7 @@
 extends JSONConfigProcessor
 
 
-func _process(dic : Dictionary):
+func _postprocess(dic : Dictionary):
 	if not has_variable("id"):
 		dic.id = 0
 		set_variable("id", 0)

@@ -1,7 +1,7 @@
 extends JSONConfigProcessor
 
 
-func _process(minimum : int):
+func _postprocess(minimum : int):
 	set_variable("min", minimum)
 
 	return minimum
