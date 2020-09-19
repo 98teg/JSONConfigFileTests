@@ -125,7 +125,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_ONE_IS_REQUIRED,
 		"properties": ["exclusive_req_1", "exclusive_req_2"],
 		"context": "object",
-		"as_text": "One of this properties needs to be specified: exclusive_req_1, exclusive_req_2, at 'object'."
+		"as_text": "One of this properties needs to be specified: ['exclusive_req_1', 'exclusive_req_2'], at 'object'."
 	})
 
 	case.add_test(test)
@@ -162,7 +162,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_EXCLUSIVITY_ERROR,
 		"properties": ["exclusive_req_1", "exclusive_req_2"],
 		"context": "object",
-		"as_text": "This properties can not be present at the same time: exclusive_req_1, exclusive_req_2, at 'object'.",
+		"as_text": "This properties can not be present at the same time: ['exclusive_req_1', 'exclusive_req_2'], at 'object'.",
 	})
 
 	case.add_test(test)
