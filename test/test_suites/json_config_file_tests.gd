@@ -74,8 +74,8 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.NUMBER,
-		"context": "json_config_file/number",
-		"as_text": "Wrong type: expected 'number', at 'json_config_file/number'.",
+		"context": "json_config_file.number",
+		"as_text": "Wrong type: expected 'number', at 'json_config_file.number'.",
 	})
 
 	case.add_test(test)
@@ -87,8 +87,8 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.NUMBER,
-		"context": "json_config_file/number",
-		"as_text": "Wrong type: expected 'number', at 'json_config_file/number'.",
+		"context": "json_config_file.number",
+		"as_text": "Wrong type: expected 'number', at 'json_config_file.number'.",
 	})
 
 	case.add_test(test)

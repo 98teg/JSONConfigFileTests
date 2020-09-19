@@ -57,8 +57,8 @@ static func execute(tests_results):
 	test.add_expected_error({
 		"error": JSONProperty.Errors.WRONG_TYPE,
 		"expected": JSONProperty.Types.STRING,
-		"context": "array/[2]",
-		"as_text": "Wrong type: expected 'string', at 'array/[2]'.",
+		"context": "array[2]",
+		"as_text": "Wrong type: expected 'string', at 'array[2]'.",
 	})
 
 	case.add_test(test)
