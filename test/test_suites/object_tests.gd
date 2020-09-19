@@ -38,7 +38,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_MISSING_PROPERTY,
 		"property": "obligatory_property",
 		"context": "object",
-		"as_text" : "The property 'obligatory_property' has not been specified, at 'object'.",
+		"as_text" : "The required property 'obligatory_property' is missing, at 'object'.",
 	})
 
 	case.add_test(test)
@@ -91,7 +91,7 @@ static func execute(tests_results):
 		"error": JSONProperty.Errors.OBJECT_NON_VALID_PROPERTY,
 		"property": "extra_property",
 		"context": "object",
-		"as_text" : "The property 'extra_property' is not a valid one, at 'object'.",
+		"as_text" : "Unkown property: 'extra_property', this property is not required, at 'object'.",
 	})
 
 	case.add_test(test)
